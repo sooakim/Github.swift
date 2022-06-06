@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-class NetworkService{
+final class NetworkService{
     static let shared: NetworkService = .init()
     
     let repoApi: MoyaProvider<RepoApi>

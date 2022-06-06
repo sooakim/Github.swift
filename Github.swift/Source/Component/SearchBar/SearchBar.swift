@@ -13,12 +13,12 @@ import UIKit
 struct SearchBar: UIViewRepresentable{
     @Binding var text: String
     
-    static func dismantleUIView(_ uiView: UISearchBar, coordinator: SearchCoordinator) {
+    static func dismantleUIView(_ uiView: UISearchBar, coordinator: _Coordinator) {
         
     }
     
-    func makeCoordinator() -> SearchCoordinator {
-        return SearchCoordinator(text: $text)
+    func makeCoordinator() -> _Coordinator {
+        return _Coordinator(text: $text)
     }
     
     func makeUIView(context: Context) -> UISearchBar {
@@ -34,7 +34,7 @@ struct SearchBar: UIViewRepresentable{
 }
 
 extension SearchBar{
-    final class SearchCoordinator: NSObject, UISearchBarDelegate{
+    final class _Coordinator: NSObject, UISearchBarDelegate{
         @Binding var text: String
         
         init(text: Binding<String>){

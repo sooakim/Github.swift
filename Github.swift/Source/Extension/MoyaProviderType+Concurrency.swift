@@ -37,7 +37,6 @@ extension Concurrency where Base: MoyaProviderType{
         
     func requestWithDecode<T>(_ token: Base.Target, callbackQueue: DispatchQueue? = nil) async throws -> T where T: Decodable{
         let response = try await request(token, callbackQueue: callbackQueue)
-        print(String(data: response.data, encoding: .utf8))
         return try response.map(T.self)
     }
 }

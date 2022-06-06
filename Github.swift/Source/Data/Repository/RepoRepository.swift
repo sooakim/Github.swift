@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-class RepoRepository{
+final class RepoRepository{
     func fetchRepos(searchText: String) async throws -> [RepoResponse]{
         do {
             let response: PaginatedResponse<RepoResponse> = try await NetworkService.shared.repoApi.concurrency.requestWithDecode(.searchRepos(query: searchText, sort: "stars"))
