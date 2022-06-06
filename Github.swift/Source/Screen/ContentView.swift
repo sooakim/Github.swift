@@ -14,6 +14,7 @@ struct ContentView: View{
         NavigationView {
             SearchRepoView()
         }
+        .navigationViewStyle(.stack)
     }
 }
 
